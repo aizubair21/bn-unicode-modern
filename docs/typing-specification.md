@@ -533,3 +533,85 @@ The input method shall attach the vowel sign to the preceding consonant.
 ### Notes
 
 Support for this vowel sign is required for complete Unicode compliance, even though it is used less frequently in modern Bangla writing.
+
+
+
+
+
+--- 
+
+
+# 5. Pre-base Vowel Rules
+
+This chapter defines the behavior of pre-base dependent vowel signs.
+
+Unlike other dependent vowels, these vowel signs are visually rendered before the consonant in most Bangla fonts.
+
+However, users shall always type the consonant first, followed by the vowel sign.
+
+The input method is responsible for producing valid Unicode output.
+
+---
+
+## RULE-201 — E Kar (ে)
+
+### Purpose
+
+The E Kar represents the vowel sound "e". Although it is visually displayed before the consonant, users type it after the consonant.
+
+### Typing Behavior
+
+User Input
+
+Consonant → E Kar
+
+The user shall never be required to type the vowel sign before the consonant.
+
+### Expected Output
+
+The input method shall produce the correct Bangla syllable.
+
+### Examples
+
+| Input | Output |
+|--------|--------|
+| ক + ে | কে |
+| গ + ে | গে |
+| ত + ে | তে |
+| ন + ে | নে |
+| ম + ে | মে |
+
+---
+
+## RULE-202 — AI Kar (ৈ)
+
+### Purpose
+
+The AI Kar represents the vowel sound "oi". Like E Kar, it is visually rendered before the consonant while being typed after it.
+
+### Typing Behavior
+
+User Input
+
+Consonant → AI Kar
+
+### Expected Output
+
+The input method shall produce the correct Bangla syllable.
+
+### Examples
+
+| Input | Output |
+|--------|--------|
+| ক + ৈ | কৈ |
+| গ + ৈ | গৈ |
+| ন + ৈ | নৈ |
+| ম + ৈ | মই |
+
+---
+
+## Design Notes
+
+The visual position of a vowel sign does not determine the typing order.
+
+Typing order is always determined by natural writing habits. Rendering is determined by the Unicode text produced by the input method and the rendering engine used by the operating system.
